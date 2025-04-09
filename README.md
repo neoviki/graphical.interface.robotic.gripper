@@ -25,9 +25,7 @@ The graphical interface is built with Electron.js for cross-platform desktop use
 - **Gripper**: 3D printed robotic gripper
 - **Motor**: DC Motor [12V, 8.6 RPM]
 - **Encoder**: Quadrature Encoder
-- **Microcontrollers**:
-  - Teensy 3.2
-  - Arduino Uno / Mega
+- **Microcontrollers**: Teensy 3.2
 
 ---
 
