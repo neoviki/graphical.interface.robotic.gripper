@@ -8,7 +8,7 @@ This project provides a control system for a custom robotic gripper using serial
 
 The graphical interface is built with Electron.js for cross-platform desktop use.
 
-![Gripper Demo](images/demo.jpeg)
+![Gripper Demo](images/demo1.jpeg)
 
 ## Features
 
