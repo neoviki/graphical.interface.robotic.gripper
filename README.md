@@ -35,8 +35,7 @@ The graphical interface is built with Electron.js for cross-platform desktop use
 
 ### 1. Flash Firmware
 
-First, flash the Teensy or Arduino with the firmware located in:
-
+First, flash the Teensy or Arduino with the firmware located in: "src.mcu/gripper"
 
 ### 2. Install & Run GUI
 
