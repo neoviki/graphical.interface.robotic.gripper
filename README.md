@@ -13,7 +13,7 @@ The graphical interface is built with Electron.js for cross-platform desktop use
 ## Features
 
 - Electron.js-based GUI for desktop control
-- Serial command interface for precise gripper control
+- Serial command interface for gripper control
 - Encoder-based automatic limit detection
 - Compatible with Teensy and Arduino boards
 - Modular hardware design with a 3D printed gripper
