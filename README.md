@@ -49,6 +49,7 @@ chmod 777 install.sh
 ./install.sh         # If error occurs, try:
 ./install_on_error.sh
 ./run.sh
+```
 
 ## Startup Behavior
 
