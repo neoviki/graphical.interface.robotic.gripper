@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>robotic gripper controller [ vikiworks.io ]</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+	<style>
+	body {
+		background-image: url("robotic_gripper.jpeg");
+	}
+	</style>
+
+  </head>
+  <body>
+    <div class="container"> 
+	<br>
+	<span class="d-block p-2 bg-info text-white text-center">
+	Robotic Gripper Controller
+	</span>
+	<div class="form-group">
+	<div class="row" style="padding-top:10px;padding-bottom:5px;">
+	<div class="col">
+		<select class="form-control" style="wordwrap" id="id_select_serial_ports">
+		<!-- Content populated from action.js-->
+		</select>
+	</div>
+	<div class="col">
+		<button id="id_btn_scan" type="button" class="btn btn-primary" onclick="event_btn_scan_sp()">scan</button>
+		<button id="id_btn_connect" type="button" class="btn btn-primary" onclick="event_btn_connect_sp()">connect</button>
+	</div>
+	</div>
+
+
+	<div style="padding-top:5px;padding-bottom:5px;">
+	<span class="d-block p-2 bg-info text-white text-center">
+	Gripper Settings
+	</span>
+	</div>
+
+	<div style="padding-top:10px;padding-bottom:1px;">
+	<div class="row">
+
+	<div class="col" align="center">
+	Gripper Open Limit
+	</div>
+
+	<div class="col" align="center">
+	Gripper Close Limit
+	</div>
+
+	</div>
+	</div>
+
+
+
+	<div class="row">
+	<div class="col">
+	<form class="range-field my-5">
+		<div class="form-group">
+		<input type="range" class="form-control-range" id="id_gripper_range" min="0" max="100" step="1" value="0" onchange="event_input_gripper_range()">
+		<div align="center">
+        <h2 class="display-4" style="color:#0d47a1"><strong id="id_gripper_percentage_value">0%</strong></h2>
+		</div>
+		</div>
+	</form>
+	</div>
+
+	<div class="col">
+	<form class="range-field my-5">
+		<div class="form-group">
+		<input type="range" class="form-control-range" id="id_gripper_range" min="0" max="100" step="1" value="0" onchange="event_input_gripper_range()">
+		<div align="center">
+        <h2 class="display-4" style="color:#0d47a1"><strong id="id_gripper_percentage_value">0%</strong></h2>
+		</div>
+		</div>
+	</form>
+	</div>
+
+	</div>
+	</div>
+
+	<div style="padding-top:1px;padding-bottom:5px;">
+	<span class="d-block p-2 bg-info text-white text-center">
+	Test Gripper
+	</span>
+	</div>
+
+	<div style="padding-top:5px;padding-bottom:5px;" align="center">
+		<button id="id_btn_motor_clk" type="button" class="btn btn-primary" onclick="event_btn_gripper_open()">Gripper Open</button>
+		<button id="id_btn_motor_cclk" type="button" class="btn btn-primary" onclick="event_btn_gripper_close()">Gripper Close</button>
+	</div>
+
+
+	<div  style="padding-top:5px;padding-bottom:5px;">
+		<span class="d-block p-2 bg-secondary text-white text-center">
+		debug logs
+		</span>
+	</div>
+	<div  style="padding-top:5px;padding-bottom:5px;">
+		<textarea class="form-control rounded-0" id="id_serial_reader" rows="6" disabled=true></textarea>
+	</div>
+
+	</div>
+	</div>
+	<script>
+	window.$ = window.jQuery = require('jquery');
+	require('./node_modules/jquery/dist/jquery.min.js');
+	require('./node_modules/bootstrap/dist/js/bootstrap.min.js');
+	</script>
+	<script src="./action.js"></script>
+	
+  </body>
+</html>
+

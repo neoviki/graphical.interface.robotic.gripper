@@ -1,32 +1,81 @@
-#### Teensy Robotic Gripper
+# Custom Robotic Gripper
 
-This code can be used to control a custom robottic gripper I am working on. The gripper can be controlled using serial communication interface. 
+This project provides a control system for a custom robotic gripper using serial communication. The gripper is powered by a brushless DC motor with a quadrature encoder and features a desktop user interface built with Electron.js.
 
-Platform Supported:
+---
 
-	- Teensy 3.2
-	- Arduino Uno, Mega
+## User Interface
 
-Hardware Used:
+The graphical interface is built with Electron.js for cross-platform desktop use.
 
-	- 3D printed robotic gripper 
-	- Motor	Type	: DC Motor [ 12V - 8.6 RPM ]
-	- Encoder Type	: Quadrature Encoder
+![Gripper Demo](images/demo.jpeg)
 
-During startup the code does the following, 
+## Features
 
-1. Opens the gripper till the gripper opening limit
-2. Close the gripper till the gripper closing limit
-3. Open and Close limit of the gripper is computed using quadrature encoder readings.
+- Electron.js-based GUI for desktop control
+- Serial command interface for precise gripper control
+- Encoder-based automatic limit detection
+- Compatible with Teensy and Arduino boards
+- Modular hardware design with a 3D printed gripper
 
-Serial Command Reference:
+---
 
-1. "o"        : fully open gripper
-2. "c"        : fully close gripper
-3. "ap<xxx>"  : actuate gripper by a percentage(xxx)
-4. "OL<xxx>"  : Set open Limit for gripper by a value (xxx)
-5. "CL<xxx>"  : Set close limit for gripper by a value (xxx)
-6. "GO<xxx>"  : Set Gripper Open Factor by a value (xxx)
-7. "GC<xxx>"  : Set Gripper Close Factor by a value (xxx)
+## Hardware Requirements
 
-The gripper is fitted with a brushless dc motor with quadrature encoder.
+- **Gripper**: 3D printed robotic gripper
+- **Motor**: DC Motor [12V, 8.6 RPM]
+- **Encoder**: Quadrature Encoder
+- **Microcontrollers**:
+  - Teensy 3.2
+  - Arduino Uno / Mega
+
+---
+
+## Setup Instructions
+
+### 1. Flash Firmware
+
+First, flash the Teensy or Arduino with the firmware located in:
+
+
+### 2. Install & Run GUI
+
+Open a terminal and run the following commands:
+
+```bash
+cd <this_repo>
+cd src.ui
+chmod 777 install.sh
+./install.sh         # If error occurs, try:
+./install_on_error.sh
+./run.sh
+
+## Startup Behavior
+
+On initialization, the gripper will:
+
+1. Open until it reaches the physical open limit.
+2. Close until it reaches the physical close limit.
+3. Automatically compute open/close limits using encoder feedback.
+
+
+## Serial Command Reference
+
+| Command     | Format        | Description                                      |
+|-------------|---------------|--------------------------------------------------|
+| `o`         | `o`           | Fully open the gripper                           |
+| `c`         | `c`           | Fully close the gripper                          |
+| `ap<xxx>`   | `ap100`       | Actuate gripper to `<xxx>` percent (e.g., 100%)  |
+| `OL<xxx>`   | `OL3000`      | Set open limit to value `<xxx>`                  |
+| `CL<xxx>`   | `CL100`       | Set close limit to value `<xxx>`                 |
+| `GO<xxx>`   | `GO5`         | Set gripper open factor to `<xxx>`              |
+| `GC<xxx>`   | `GC5`         | Set gripper close factor to `<xxx>`             |
+
+
+---
+
+## Note
+
+This project was developed as part of an evaluation prototype for a chocolate-picking robot gripper intended for use in an assembly line for a client in the UK. Due to confidentiality constraints, certain hardware images, detailed schematics, and implementation specifics are not included in this repository.
+
+
